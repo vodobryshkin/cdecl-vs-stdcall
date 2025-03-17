@@ -1,15 +1,12 @@
 org 0x100
 
-a: word 0x0111
+a: word 0x0001
 
 start:
     ld a
     push
     
     call $get_sign
-
-    swap
-    pop
 
     hlt
 
@@ -30,6 +27,10 @@ get_sign:
         ld &0
 
         swap
+        pop
+
+        swap
+        st &1
         pop
 
         ret

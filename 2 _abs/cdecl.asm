@@ -8,6 +8,9 @@ start:
     
     call $abs
 
+    swap
+    pop
+
     hlt
 
 abs:
@@ -19,14 +22,11 @@ abs:
     bpl end_of_func
     neg
     st &0
+    
     end_of_func:
         ld &0
 
         swap
-        pop
-
-        swap
-        st &1
         pop
 
         ret
